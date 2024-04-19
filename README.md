@@ -39,24 +39,45 @@
 
 Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
 
-
+Regardons les pods :  
      ```sh
       kubectl get pods
      ```
-Affichage : 
+     
+Affichage des pods : 
+
+    NAME                                          READY   STATUS    RESTARTS   AGE
+    hello-world-consumer-8c94685d-jlb97           1/1     Running   0          8m56s
+    hello-world-producer-5cb7d54cb6-z74hw         1/1     Running   0          8m41s
+    my-cluster-entity-operator-7df45b6b78-qrwpx   2/2     Running   0          13m
+    my-cluster-kafka-0                            1/1     Running   0          14m
+    my-cluster-kafka-1                            1/1     Running   0          14m
+    my-cluster-kafka-2                            1/1     Running   0          14m
+    my-cluster-zookeeper-0                        1/1     Running   0          15m
+    my-cluster-zookeeper-1                        1/1     Running   0          15m
+    my-cluster-zookeeper-2                        1/1     Running   0          15m
+    strimzi-cluster-operator-86df856f74-bcpfn     1/1     Running   0          19m
+
+
+Regardons les services :  
      ```sh
-NAME                                          READY   STATUS    RESTARTS   AGE
-hello-world-consumer-8c94685d-jlb97           1/1     Running   0          8m56s
-hello-world-producer-5cb7d54cb6-z74hw         1/1     Running   0          8m41s
-my-cluster-entity-operator-7df45b6b78-qrwpx   2/2     Running   0          13m
-my-cluster-kafka-0                            1/1     Running   0          14m
-my-cluster-kafka-1                            1/1     Running   0          14m
-my-cluster-kafka-2                            1/1     Running   0          14m
-my-cluster-zookeeper-0                        1/1     Running   0          15m
-my-cluster-zookeeper-1                        1/1     Running   0          15m
-my-cluster-zookeeper-2                        1/1     Running   0          15m
-strimzi-cluster-operator-86df856f74-bcpfn     1/1     Running   0          19m
+      kubectl get services
      ```
+     
+Affichage des services : 
+
+    NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                               AGE
+    kubernetes                    ClusterIP   10.96.0.1       <none>        443/TCP                               34m
+    my-cluster-kafka-bootstrap    ClusterIP   10.96.244.54    <none>        9091/TCP,9093/TCP                     16m
+    my-cluster-kafka-brokers      ClusterIP   None            <none>        9090/TCP,9091/TCP,8443/TCP,9093/TCP   16m
+    my-cluster-zookeeper-client   ClusterIP   10.96.191.190   <none>        2181/TCP                              17m
+    my-cluster-zookeeper-nodes    ClusterIP   None            <none>        2181/TCP,2888/TCP,3888/TCP            17m
+
+
+
+
+ 
+
 
 
 
