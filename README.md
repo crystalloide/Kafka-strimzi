@@ -78,7 +78,7 @@ Affichage des services :
    ```sh
 kubectl logs hello-world-producer-5cb7d54cb6-z74hw
    ```
-
+  A savoir : on peut ajouter "--follow" à la commande ci-dessus pour rester et suivre les logs
 
 ### 8. Et regardons ensuite dans les logs du consumer pour voir que les messages issus du producer sont bien consommés par le consumer ...
 
