@@ -23,7 +23,7 @@
       ```
 
 
-### 4. Une fois les étapes précédents effectuées, on applique les fichiers de déploiement du consumer et du producer :
+### 4. Une fois ces étapes effectuées, on applique les fichiers de déploiement du consumer et du producer :
     
 *    Pour le "consumer" :
     
