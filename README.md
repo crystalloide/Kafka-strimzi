@@ -40,9 +40,10 @@
 Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
 
 Regardons les pods :  
-     ```sh
+
+   ```sh
       kubectl get pods
-     ```
+   ```
      
 Affichage des pods : 
 
@@ -60,9 +61,9 @@ Affichage des pods :
 
 
 Regardons les services :  
-     ```sh
+   ```sh
       kubectl get services
-     ```
+   ```
      
 Affichage des services : 
 
