@@ -38,3 +38,26 @@
      ```
 
 Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
+
+
+     ```sh
+      kubectl get pods
+     ```
+Affichage : 
+     ```sh
+NAME                                          READY   STATUS    RESTARTS   AGE
+hello-world-consumer-8c94685d-jlb97           1/1     Running   0          8m56s
+hello-world-producer-5cb7d54cb6-z74hw         1/1     Running   0          8m41s
+my-cluster-entity-operator-7df45b6b78-qrwpx   2/2     Running   0          13m
+my-cluster-kafka-0                            1/1     Running   0          14m
+my-cluster-kafka-1                            1/1     Running   0          14m
+my-cluster-kafka-2                            1/1     Running   0          14m
+my-cluster-zookeeper-0                        1/1     Running   0          15m
+my-cluster-zookeeper-1                        1/1     Running   0          15m
+my-cluster-zookeeper-2                        1/1     Running   0          15m
+strimzi-cluster-operator-86df856f74-bcpfn     1/1     Running   0          19m
+     ```
+
+
+
+
