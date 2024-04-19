@@ -37,9 +37,7 @@
       kubectl create -f hello-world.yaml -n default
      ```
 
-Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
-
-Regardons les pods :  
+### 5. Regardons les pods :  
 
    ```sh
       kubectl get pods
@@ -60,7 +58,7 @@ Affichage des pods :
     strimzi-cluster-operator-86df856f74-bcpfn     1/1     Running   0          19m
 
 
-Regardons les services :  
+### 6. Regardons les services :  
    ```sh
       kubectl get services
    ```
@@ -76,7 +74,11 @@ Affichage des services :
 
 
 
+### 7. Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
 
+   ```sh
+kubectl logs hello-world-consumer-8c94685d-jlb97 
+   ```
  
 
 
