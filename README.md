@@ -1,40 +1,40 @@
-## Steps to execute the Demo
+## Etapes de la démo :
  
- ### 1. First step is to deploy the Strimzi operator
+ ### 1. La première étape consiste à déployer l'opérateur Strimzi :
 
-     kubectl create -f 'https://strimzi.io/install/latest?namespace=myproject' -n myproject
+     kubectl create -f 'https://strimzi.io/install/latest?namespace=default' -n default
 
- ### 2. Now once the operator is Ready, you should deploy the Kafka custom resource named `kafkaTLS.yaml`.
+ ### 2. Une fois que l'opérateur est "Ready", on va déployer le Kafka custom resource apprlé `kafkaTLS.yaml` : 
 
-     kubectl create -f kafkaTls.yaml -n my project
+     kubectl create -f kafkaTls.yaml -n default
 
-### 3. Once your Kafka Cluster is deployed, you can apply the `user` and `topic` custom resource.
+### 3. Une fois que le cluster Kafka est deployé, on applique les custom ressources nomées `user` et `topic` :
 
-*    For user
-
-      ```sh
-       kubectl create -f user.yaml -n myproject
-      ```
-
-*    For topic
+*    Pour "user" :
 
       ```sh
-       kubectl create -f topic.yaml -n myproject
+       kubectl create -f user.yaml -n default
+      ```
+
+*    Pour "topic" :
+
+      ```sh
+       kubectl create -f topic.yaml -n default
       ```
 
 
-### 4. After the above steps are performed, you can now apply the consumer and producer deployment files.
+### 4. Une fosi les étapes précédents effectuées, on applique les fichiers de déploiement du consumer et du producer :
     
-*    For consumer
+*    Pour le "consumer" :
     
      ```sh
-      kubectl create -f consumer.yaml -n myproject
+      kubectl create -f consumer.yaml -n default
      ```
 
-*    For producer
+*    Pour le "Producer" : 
 
      ```sh
-      kubectl create -f hello-world.yaml -n myproject
+      kubectl create -f hello-world.yaml -n default
      ```
 
-And then you can check the logs of the consumer to see that the messages producers are getting consumed by the consumer
+Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
