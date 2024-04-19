@@ -8,7 +8,7 @@
 
      kubectl create -f kafkaTls.yaml -n default
 
-### 3. Une fois que le cluster Kafka est deployé, on applique les custom ressources nomées `user` et `topic` :
+### 3. Une fois que le cluster Kafka est déployé, on applique les custom ressources nomées `user` et `topic` :
 
 *    Pour "user" :
 
@@ -23,7 +23,7 @@
       ```
 
 
-### 4. Une fosi les étapes précédents effectuées, on applique les fichiers de déploiement du consumer et du producer :
+### 4. Une fois les étapes précédents effectuées, on applique les fichiers de déploiement du consumer et du producer :
     
 *    Pour le "consumer" :
     
