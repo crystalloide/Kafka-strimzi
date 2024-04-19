@@ -4,11 +4,11 @@
 
      kubectl create -f 'https://strimzi.io/install/latest?namespace=default' -n default
 
- ### 2. Une fois que l'opérateur est "Ready", on va déployer le Kafka custom resource apprlé `kafkaTLS.yaml` : 
+ ### 2. Une fois que l'opérateur est "Ready", on va déployer la Custom Resource Définition de notre cluster Kafka nommée `kafkaTLS.yaml` : 
 
      kubectl create -f kafkaTls.yaml -n default
 
-### 3. Une fois que le cluster Kafka est déployé, on applique les custom ressources nomées `user` et `topic` :
+### 3. Une fois que le cluster Kafka est déployé, on applique les custom ressources définitions nommées `user` et `topic` :
 
 *    Pour "user" :
 
