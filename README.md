@@ -73,13 +73,20 @@ Affichage des services :
     my-cluster-zookeeper-nodes    ClusterIP   None            <none>        2181/TCP,2888/TCP,3888/TCP            17m
 
 
+### 7. Regardons les logs du producer : 
 
-### 7. Et on peut ensuite regarder dans les logs du consumer et vérifier que les messages issus du producer sont bien consommés par le consumer ...
+   ```sh
+kubectl logs hello-world-producer-5cb7d54cb6-z74hw
+   ```
+
+
+### 8. Et regardons ensuite dans les logs du consumer pour voir que les messages issus du producer sont bien consommés par le consumer ...
 
    ```sh
 kubectl logs hello-world-consumer-8c94685d-jlb97 
    ```
  
+
 
 
 
