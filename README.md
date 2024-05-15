@@ -2,7 +2,7 @@
  
  ### 1. La première étape consiste à déployer l'opérateur Strimzi :
 
-     kubectl create -f strimzi-operator.yaml -n myproject
+     kubectl create -f 'https://strimzi.io/install/latest?namespace=myproject' -n myproject
 
  ### 2. Une fois que l'opérateur est "Ready", on va déployer la Custom Resource Définition de notre cluster Kafka nommée `kafkaTLS.yaml` : 
 
