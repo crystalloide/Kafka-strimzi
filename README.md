@@ -2,24 +2,24 @@
  
  ### 1. La première étape consiste à déployer l'opérateur Strimzi :
 
-     kubectl create -f 'https://strimzi.io/install/latest?namespace=default' -n default
+     kubectl create -f strimzi-operator.yaml -n myproject
 
  ### 2. Une fois que l'opérateur est "Ready", on va déployer la Custom Resource Définition de notre cluster Kafka nommée `kafkaTLS.yaml` : 
 
-     kubectl create -f kafkaTls.yaml -n default
+     kubectl create -f kafkaTls.yaml -n myproject
 
 ### 3. Une fois que le cluster Kafka est déployé, on applique les custom ressources définitions nommées `user` et `topic` :
 
 *    Pour "user" :
 
       ```sh
-       kubectl create -f user.yaml -n default
+       kubectl create -f user.yaml -n myproject
       ```
 
 *    Pour "topic" :
 
       ```sh
-       kubectl create -f topic.yaml -n default
+       kubectl create -f topic.yaml -n myproject
       ```
 
 
@@ -28,13 +28,13 @@
 *    Pour le "consumer" :
     
      ```sh
-      kubectl create -f consumer.yaml -n default
+      kubectl create -f consumer.yaml -n myproject
      ```
 
 *    Pour le "Producer" : 
 
      ```sh
-      kubectl create -f hello-world.yaml -n default
+      kubectl create -f hello-world.yaml -n myproject
      ```
 
 ### 5. Regardons les pods :  
