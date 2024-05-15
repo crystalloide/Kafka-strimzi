@@ -75,19 +75,36 @@ Affichage des services :
 ### 7. Regardons les logs du producer : 
 
    ```sh
-kubectl logs hello-world-producer-5cb7d54cb6-z74hw -n myproject
+kubectl -n myproject logs hello-world-producer-5cb7d54cb6-z74hw
    ```
   A savoir : on peut ajouter "--follow" à la commande ci-dessus pour rester et suivre les logs
 
 ### 8. Et regardons ensuite dans les logs du consumer pour voir que les messages issus du producer sont bien consommés par le consumer ...
 
    ```sh
-kubectl logs hello-world-consumer-8c94685d-jlb97 -n myproject
+kubectl -n myproject logs hello-world-consumer-8c94685d-jlb97 
    ```
  
+### 9. Une fois le test fini, suppression du cluster Apache Kafka
 
+   ```sh
+kubectl -n myproject delete $(kubectl get strimzi -o name -n myproject) 
+   ```
+Cela supprimera toutes les ressources personnalisées Strimzi, 
 
+y compris le cluster Apache Kafka et toutes les ressources personnalisées KafkaTopic
 
+mais laissera par contre l'opérateur de cluster Strimzi fonctionner 
 
+afin qu'il puisse répondre aux nouvelles demandes de ressources personnalisées Kafka.
 
+### 10. Suppression de l'opérateur de cluster Strimzi :
+
+Pour supprimer complètement l'opérateur de cluster Strimzi et les définitions associées :
+
+   ```sh
+kubectl -n myproject delete -f 'https://strimzi.io/install/latest?namespace=myproject'
+   ```
+
+### Have Fun :-)
 
