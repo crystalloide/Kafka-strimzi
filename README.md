@@ -40,7 +40,7 @@
 ### 5. Regardons les pods :  
 
    ```sh
-      kubectl get pods
+      kubectl get pods -n myproject
    ```
      
 Affichage des pods : 
@@ -60,13 +60,12 @@ Affichage des pods :
 
 ### 6. Regardons les services :  
    ```sh
-      kubectl get services
+      kubectl get services -n myproject
    ```
      
 Affichage des services : 
 
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                               AGE
-    kubernetes                    ClusterIP   10.96.0.1       <none>        443/TCP                               34m
     my-cluster-kafka-bootstrap    ClusterIP   10.96.244.54    <none>        9091/TCP,9093/TCP                     16m
     my-cluster-kafka-brokers      ClusterIP   None            <none>        9090/TCP,9091/TCP,8443/TCP,9093/TCP   16m
     my-cluster-zookeeper-client   ClusterIP   10.96.191.190   <none>        2181/TCP                              17m
@@ -76,14 +75,14 @@ Affichage des services :
 ### 7. Regardons les logs du producer : 
 
    ```sh
-kubectl logs hello-world-producer-5cb7d54cb6-z74hw
+kubectl logs hello-world-producer-5cb7d54cb6-z74hw -n myproject
    ```
   A savoir : on peut ajouter "--follow" à la commande ci-dessus pour rester et suivre les logs
 
 ### 8. Et regardons ensuite dans les logs du consumer pour voir que les messages issus du producer sont bien consommés par le consumer ...
 
    ```sh
-kubectl logs hello-world-consumer-8c94685d-jlb97 
+kubectl logs hello-world-consumer-8c94685d-jlb97 -n myproject
    ```
  
 
